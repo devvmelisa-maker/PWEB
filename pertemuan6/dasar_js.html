@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bab 6 - Dasar JavaScript</title>
+</head>
+<body>
+
+  <h1>Sistem Kelola Data Mahasiswa</h1>
+  <p>Buka <strong>Developer Console</strong> (Cmd + Option + J pada Mac) untuk melihat hasil eksekusi program.</p>
+
+  <script>
+    const namaMatkul = "Pemrograman Web";
+    let kuota = 30;
+    let terisi = 28;
+
+    console.log("=== 1. DASAR VARIABEL ===");
+    console.log("Mata Kuliah:", namaMatkul);
+    console.log("Sisa Kuota:", kuota - terisi);
+
+    console.log("\n=== 2. KONDISIONAL ===");
+    if (terisi >= kuota) {
+      console.log("Status Kelas: Penuh");
+    } else {
+      console.log("Status Kelas: Masih Tersedia");
+    }
+
+    const daftarMahasiswa = [
+      { nim: "F1E123001", nama: "Bambang", nilai: 85 },
+      { nim: "F1E123002", nama: "Boboiboy", nilai: 70 },
+      { nim: "F1E123003", nama: "Bubu", nilai: 90 }
+    ];
+
+    console.log("\n=== 3. PERULANGAN & PROSES DATA ===");
+    function hitungKelulusan(list) {
+      for (let i = 0; i < list.length; i++) {
+        let status = list[i].nilai >= 75 ? "LULUS" : "TIDAK LULUS";
+        console.log(`${i + 1}. ${list[i].nama} (${list[i].nim}) - Nilai: ${list[i].nilai} [${status}]`);
+      }
+    }
+
+    hitungKelulusan(daftarMahasiswa);
+  </script>
+
+</body>
+</html>
